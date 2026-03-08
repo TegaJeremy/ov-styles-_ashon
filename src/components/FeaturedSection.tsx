@@ -27,6 +27,11 @@ const FeaturedSection = () => {
     { name: "Suits", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772985426/IMG_4131_je3vhz.jpg", count: " " },
     { name: "Ankara", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772986098/IMG_4140_ftn484.jpg", count: "" },
     { name: "English wears", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772986095/IMG_4138_lcnogb.jpg", count: " " },
+    { name: "Senetors", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772989198/IMG_4141_a3y4wi.jpg", count: " " },
+    { name: "Joggers", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772989199/IMG_4142_gsvdsv.jpg", count: " " },
+    { name: "cultural wears", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772990101/IMG_4143_o1ylnv.jpg", count: " " },
+    { name: "office wears", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772990124/IMG_4145_mhmdhj.jpg", count: " " },
+    
   ];
 
   useEffect(() => {
