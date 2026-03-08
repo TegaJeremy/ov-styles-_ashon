@@ -111,6 +111,14 @@ export const TRANSLATIONS: Record<Language, {
   faq2Q: string; faq2A: string;
   faq3Q: string; faq3A: string;
   faq4Q: string; faq4A: string;
+  // Shop / Cart
+  addToCart: string; addedToCart: string; removeFromCart: string;
+  cart: string; cartEmpty: string; cartEmptyDesc: string;
+  cartTotal: string; checkoutWhatsapp: string; continueShopping: string;
+  qty: string; itemsInCart: string; clearCart: string;
+  loved: string; loves: string; itemLoved: string;
+  filterAll: string; sortBy: string; sortNewest: string; sortPriceLow: string; sortPriceHigh: string; sortMostLoved: string;
+  noItemsFound: string; searchItems: string;
   // Misc
   searchPlaceholder: string; filters: string; clearFilters: string;
   piecesFound: string; category: string; color: string; priceRange: string;
@@ -215,6 +223,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Do you offer ready-to-wear pieces?", faq2A: "Yes. Our curated ready-to-wear collection is available through the shop. These pieces are produced in strictly limited runs to preserve their exclusivity.",
     faq3Q: "Can I book a fitting before committing?", faq3A: "Absolutely. We encourage an initial consultation so we can understand your vision fully before any commitment is made. Contact us to schedule.",
     faq4Q: "Do you ship internationally?", faq4A: "Yes, we deliver to clients across Nigeria and internationally. Shipping timelines and costs will be confirmed at the time of order.",
+    addToCart: "Add to Cart", addedToCart: "Added", removeFromCart: "Remove",
+    cart: "Cart", cartEmpty: "Your cart is empty", cartEmptyDesc: "Browse the collection and add pieces you love.",
+    cartTotal: "Total", checkoutWhatsapp: "Checkout via WhatsApp", continueShopping: "Continue Shopping",
+    qty: "Qty", itemsInCart: "items in cart", clearCart: "Clear Cart",
+    loved: "Loved", loves: "loves", itemLoved: "You loved this piece",
+    filterAll: "All", sortBy: "Sort by", sortNewest: "Newest", sortPriceLow: "Price: Low to High", sortPriceHigh: "Price: High to Low", sortMostLoved: "Most Loved",
+    noItemsFound: "No pieces found", searchItems: "Search pieces...",
   },
   yo: {
     home: "Ile", about: "Nipa Wa", marketplace: "Ile-Itaja", contact: "Kan Si Wa",
@@ -306,8 +321,15 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Ṣé o ní aṣọ ready-to-wear?", faq2A: "Bẹ́ẹ̀ni. Akojopo ready-to-wear wa lórí àtẹ̀jáde ní ìwọ̀n dídínwọ́n.",
     faq3Q: "Ṣé mo lè ṣe fitting ṣáájú ìgbẹ̀kẹ̀lé?", faq3A: "Dájúdájú. A gbàiyọ ìfọ̀rọ̀wánilẹ́nuwò àkọ́kọ́ láti mọ àfẹ́ rẹ daradara.",
     faq4Q: "Ṣé ẹ ń rán aṣọ lọ sí ẹlòmíì?", faq4A: "Bẹ́ẹ̀ni, a ń jiṣẹ́ sí Nigeria àti àgbáyé. Àkókò jiṣẹ́ yóò jẹ́ ìmúdájú ní àkókò àṣẹ.",
+    addToCart: "Fi sí Àgbon", addedToCart: "Ti Fi", removeFromCart: "Yọ Kuro",
+    cart: "Àgbon", cartEmpty: "Àgbon rẹ ò ní nǹkan", cartEmptyDesc: "Ṣàwárí akojopo kí o sì fi àwọn aṣọ tí o fẹ́ síi.",
+    cartTotal: "Àpapọ̀", checkoutWhatsapp: "Sanwó lórí WhatsApp", continueShopping: "Tẹsiwaju Rírà",
+    qty: "Iye", itemsInCart: "àwọn ege ní àgbon", clearCart: "Pa Àgbon",
+    loved: "Fẹ́rẹ̀", loves: "fẹ́rẹ̀", itemLoved: "O fẹ́ aṣọ yìí",
+    filterAll: "Gbogbo", sortBy: "Ṣe Títọsọ", sortNewest: "Tuntun Jùlọ", sortPriceLow: "Iye: Kékeré sí Àgbà", sortPriceHigh: "Iye: Àgbà sí Kékeré", sortMostLoved: "Tí A Fẹ́ Jùlọ",
+    noItemsFound: "Kò sí aṣọ tí a rí", searchItems: "Wà àwọn aṣọ...",
   },
-    ig: {home: "Ulo", about: "Maka Anyị", marketplace: "Ahịa", contact: "Kpọtụrụ Anyị",
+     ig: {home: "Ulo", about: "Maka Anyị", marketplace: "Ahịa", contact: "Kpọtụrụ Anyị",
     exploreCollection: "Chọpụta Nchịkọta", bookFitting: "Dee Nkwado",
     tagline: "Ebe Ọdịnala Zute Uwe Dị Ọnụ Ala", tagline2: "Akwara maka Oge Niile",
     tagline3: "Emere ya nke ọma, Yi ya na Otù", tagline4: "Ụdị Afrika Oge Ugbu a", tagline5: "Ụkwụ Ọ bụla Na-akọ Akụkọ",
@@ -396,6 +418,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Ị nwere uwe ready-to-wear?", faq2A: "Ee. Nchịkọta ready-to-wear anyị dị na ụlọ ahịa na ọnụ ọgụgụ dị oke.",
     faq3Q: "Enwere m ike ịdee oge nyocha tupu ịkwado?", faq3A: "Dị mma. Anyị na-akwado mkparịta ụka mbụ iji ghọta ọhụụ gị nke ọma.",
     faq4Q: "Ị na-ebuga ihe ịzụ ahịa mba ụwa?", faq4A: "Ee, anyị na-eziga na Nigeria na mba ụwa. A ga-akwado oge na ọnụ ahịa na oge ịzụ.",
+    addToCart: "Tinye na Igwe", addedToCart: "Atinyere", removeFromCart: "Wepu",
+    cart: "Igwe", cartEmpty: "Igwe gị dị efu", cartEmptyDesc: "Chọpụta nchịkọta wee tinye ihe ị hụrụ n'anya.",
+    cartTotal: "Ngụkọta", checkoutWhatsapp: "Kwuo Ụgwọ na WhatsApp", continueShopping: "Gaa n'ihu Ịzụ",
+    qty: "Ọnụ", itemsInCart: "ihe na igwe", clearCart: "Hichapụ Igwe",
+    loved: "Hụrụ n'Anya", loves: "hụrụ n'anya", itemLoved: "Ị hụrụ uwe a n'anya",
+    filterAll: "Niile", sortBy: "Hazie site", sortNewest: "Ọhụrụ Kacha", sortPriceLow: "Ọnụ: Ala ruo Elu", sortPriceHigh: "Ọnụ: Elu ruo Ala", sortMostLoved: "Kacha Hụrụ n'Anya",
+    noItemsFound: "Achọtaghị uwe", searchItems: "Chọọ uwe...",
   },
   ha: {
     home: "Gida", about: "Game Da Mu", marketplace: "Kasuwa", contact: "Tuntuɓe Mu",
@@ -487,6 +516,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Kuna da tufafi ready-to-wear?", faq2A: "Ee. Tarin ready-to-wear ɗinmu yana samuwa a cikin ƙayyadaddun yawan.",
     faq3Q: "Zan iya yin fitting kafin alƙawari?", faq3A: "Tabbas. Muna ƙarfafawa farkon shawarwari kafin kowace alƙawari.",
     faq4Q: "Kuna jigilar kaya zuwa ƙasashen waje?", faq4A: "Ee, muna aika kaya zuwa Nigeria da ƙasashen waje. Za a tabbatar da lokacin jigilar kaya da farashi.",
+    addToCart: "Ƙara zuwa Kwandon", addedToCart: "An Ƙara", removeFromCart: "Cire",
+    cart: "Kwando", cartEmpty: "Kwandon ku bai cika ba", cartEmptyDesc: "Bincika tarin ka ƙara abubuwan da kuke son.",
+    cartTotal: "Jimla", checkoutWhatsapp: "Biya ta WhatsApp", continueShopping: "Ci gaba da Siya",
+    qty: "Yawa", itemsInCart: "kayan da ke kwando", clearCart: "Share Kwando",
+    loved: "An So", loves: "suna so", itemLoved: "Kun so wannan tufafin",
+    filterAll: "Duka", sortBy: "Tsarawa ta", sortNewest: "Sabon", sortPriceLow: "Farashi: Ƙasa zuwa Sama", sortPriceHigh: "Farashi: Sama zuwa Ƙasa", sortMostLoved: "Mafi So",
+    noItemsFound: "Ba a sami tufafi ba", searchItems: "Nema tufafi...",
   },
   urh: {
     home: "Oke", about: "Rerin Ai", marketplace: "Ọtọ", contact: "Ro Ai",
@@ -578,6 +614,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Ṣé o ní aṣọ ready-to-wear?", faq2A: "Bẹ́ẹ̀ni, ní ìwọ̀n dídínwọ́n.",
     faq3Q: "Ṣé mo lè ṣe fitting ṣáájú?", faq3A: "Dájúdájú. A gbàiyọ ìfọ̀rọ̀wánilẹ́nuwò àkọ́kọ́.",
     faq4Q: "Ṣé ẹ ń rán aṣọ lọ ẹlòmíì?", faq4A: "Bẹ́ẹ̀ni, Nigeria àti àgbáyé.",
+    addToCart: "Fi sí Àgbon", addedToCart: "Ti Fi", removeFromCart: "Yọ Kuro",
+    cart: "Àgbon", cartEmpty: "Àgbon rẹ ò ní nǹkan", cartEmptyDesc: "Ṣàwárí akojopo kí o sì fi àwọn aṣọ síi.",
+    cartTotal: "Àpapọ̀", checkoutWhatsapp: "Sanwó lórí WhatsApp", continueShopping: "Tẹsiwaju Rírà",
+    qty: "Iye", itemsInCart: "àwọn ege ní àgbon", clearCart: "Pa Àgbon",
+    loved: "Fẹ́rẹ̀", loves: "fẹ́rẹ̀", itemLoved: "O fẹ́ aṣọ yìí",
+    filterAll: "Gbogbo", sortBy: "Ṣe Títọsọ", sortNewest: "Tuntun", sortPriceLow: "Iye: Kékeré sí Àgbà", sortPriceHigh: "Iye: Àgbà sí Kékeré", sortMostLoved: "Tí A Fẹ́ Jùlọ",
+    noItemsFound: "Kò sí aṣọ", searchItems: "Wà àwọn aṣọ...",
   },
   fr: {
     home: "Accueil", about: "À Propos", marketplace: "Boutique", contact: "Contact",
@@ -669,6 +712,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Proposez-vous des pièces prêt-à-porter?", faq2A: "Oui. Notre collection prêt-à-porter est disponible en éditions strictement limitées.",
     faq3Q: "Puis-je réserver un essayage avant de m'engager?", faq3A: "Absolument. Nous encourageons une consultation initiale avant tout engagement.",
     faq4Q: "Livrez-vous à l'international?", faq4A: "Oui, nous livrons au Nigeria et à l'international. Les délais et coûts seront confirmés à la commande.",
+    addToCart: "Ajouter au Panier", addedToCart: "Ajouté", removeFromCart: "Retirer",
+    cart: "Panier", cartEmpty: "Votre panier est vide", cartEmptyDesc: "Parcourez la collection et ajoutez des pièces.",
+    cartTotal: "Total", checkoutWhatsapp: "Commander via WhatsApp", continueShopping: "Continuer les Achats",
+    qty: "Qté", itemsInCart: "articles dans le panier", clearCart: "Vider le Panier",
+    loved: "Aimé", loves: "aiment", itemLoved: "Vous aimez cette pièce",
+    filterAll: "Tous", sortBy: "Trier par", sortNewest: "Plus récent", sortPriceLow: "Prix: Croissant", sortPriceHigh: "Prix: Décroissant", sortMostLoved: "Plus Aimé",
+    noItemsFound: "Aucune pièce trouvée", searchItems: "Rechercher des pièces...",
   },
   ar: {
     home: "الرئيسية", about: "من نحن", marketplace: "المتجر", contact: "اتصل بنا",
@@ -760,6 +810,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "هل تقدمون ملابس جاهزة؟", faq2A: "نعم. مجموعتنا الجاهزة متاحة بإصدارات محدودة للغاية.",
     faq3Q: "هل يمكنني حجز موعد قياس قبل الالتزام؟", faq3A: "بالتأكيد. نشجع على استشارة أولية قبل أي التزام.",
     faq4Q: "هل تشحنون دولياً؟", faq4A: "نعم، نوصل إلى نيجيريا وعالمياً. سيتم تأكيد المواعيد والتكاليف عند الطلب.",
+    addToCart: "أضف إلى السلة", addedToCart: "أُضيف", removeFromCart: "إزالة",
+    cart: "السلة", cartEmpty: "سلتك فارغة", cartEmptyDesc: "تصفح المجموعة وأضف القطع التي تعجبك.",
+    cartTotal: "الإجمالي", checkoutWhatsapp: "الدفع عبر WhatsApp", continueShopping: "مواصلة التسوق",
+    qty: "الكمية", itemsInCart: "عناصر في السلة", clearCart: "إفراغ السلة",
+    loved: "محبوب", loves: "يحبون", itemLoved: "أعجبتك هذه القطعة",
+    filterAll: "الكل", sortBy: "ترتيب حسب", sortNewest: "الأحدث", sortPriceLow: "السعر: الأدنى أولاً", sortPriceHigh: "السعر: الأعلى أولاً", sortMostLoved: "الأكثر إعجاباً",
+    noItemsFound: "لم يتم العثور على قطع", searchItems: "ابحث عن قطع...",
   },
   ru: {
     home: "Главная", about: "О нас", marketplace: "Магазин", contact: "Контакты",
@@ -851,6 +908,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "Есть ли у вас изделия прêт-à-porter?", faq2A: "Да. Наша коллекция прêт-à-porter доступна в строго ограниченных тиражах.",
     faq3Q: "Могу ли я записаться на примерку перед заказом?", faq3A: "Конечно. Мы рекомендуем начальную консультацию перед любым обязательством.",
     faq4Q: "Доставляете ли вы международно?", faq4A: "Да, мы доставляем по Нигерии и за рубеж. Сроки и стоимость будут подтверждены при оформлении заказа.",
+    addToCart: "В корзину", addedToCart: "Добавлено", removeFromCart: "Убрать",
+    cart: "Корзина", cartEmpty: "Ваша корзина пуста", cartEmptyDesc: "Просматривайте коллекцию и добавляйте понравившиеся изделия.",
+    cartTotal: "Итого", checkoutWhatsapp: "Оформить через WhatsApp", continueShopping: "Продолжить покупки",
+    qty: "Кол-во", itemsInCart: "товаров в корзине", clearCart: "Очистить корзину",
+    loved: "Нравится", loves: "нравится", itemLoved: "Вам понравилось это изделие",
+    filterAll: "Все", sortBy: "Сортировать", sortNewest: "Новинки", sortPriceLow: "Цена: по возрастанию", sortPriceHigh: "Цена: по убыванию", sortMostLoved: "Самые популярные",
+    noItemsFound: "Изделия не найдены", searchItems: "Поиск изделий...",
   },
   zh: {
     home: "首页", about: "关于我们", marketplace: "购物", contact: "联系我们",
@@ -942,6 +1006,13 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "您提供成衣吗？", faq2A: "是的。我们的精选成衣系列以严格限量版本提供。",
     faq3Q: "我可以在确认前预约试装吗？", faq3A: "当然可以。我们鼓励在做出任何承诺之前进行初步咨询。",
     faq4Q: "您提供国际配送吗？", faq4A: "是的，我们向尼日利亚和国际客户配送。配送时间和费用将在下单时确认。",
+    addToCart: "加入购物车", addedToCart: "已加入", removeFromCart: "移除",
+    cart: "购物车", cartEmpty: "您的购物车是空的", cartEmptyDesc: "浏览系列并添加您喜欢的单品。",
+    cartTotal: "总计", checkoutWhatsapp: "通过WhatsApp结账", continueShopping: "继续购物",
+    qty: "数量", itemsInCart: "件商品在购物车中", clearCart: "清空购物车",
+    loved: "喜欢", loves: "人喜欢", itemLoved: "您喜欢这件单品",
+    filterAll: "全部", sortBy: "排序", sortNewest: "最新", sortPriceLow: "价格：低到高", sortPriceHigh: "价格：高到低", sortMostLoved: "最受欢迎",
+    noItemsFound: "未找到单品", searchItems: "搜索单品...",
   },
   hi: {
     home: "होम", about: "हमारे बारे में", marketplace: "दुकान", contact: "संपर्क करें",
@@ -1033,5 +1104,12 @@ export const TRANSLATIONS: Record<Language, {
     faq2Q: "क्या आप रेडी-टू-वेयर पीस ऑफर करते हैं?", faq2A: "हाँ। हमारी क्यूरेटेड रेडी-टू-वेयर संग्रह सख्त सीमित संस्करणों में उपलब्ध है।",
     faq3Q: "क्या मैं प्रतिबद्ध होने से पहले फिटिंग बुक कर सकता हूं?", faq3A: "बिल्कुल। हम किसी भी प्रतिबद्धता से पहले प्रारंभिक परामर्श को प्रोत्साहित करते हैं।",
     faq4Q: "क्या आप अंतरराष्ट्रीय स्तर पर शिप करते हैं?", faq4A: "हाँ, हम नाइजीरिया और अंतरराष्ट्रीय स्तर पर डिलीवर करते हैं। शिपिंग समय और लागत ऑर्डर पर पुष्टि की जाएगी।",
+    addToCart: "कार्ट में जोड़ें", addedToCart: "जोड़ा गया", removeFromCart: "हटाएं",
+    cart: "कार्ट", cartEmpty: "आपकी कार्ट खाली है", cartEmptyDesc: "संग्रह ब्राउज़ करें और पसंदीदा पीस जोड़ें।",
+    cartTotal: "कुल", checkoutWhatsapp: "WhatsApp से चेकआउट", continueShopping: "खरीदारी जारी रखें",
+    qty: "मात्रा", itemsInCart: "आइटम कार्ट में", clearCart: "कार्ट साफ़ करें",
+    loved: "पसंद", loves: "पसंद करते हैं", itemLoved: "आपको यह पीस पसंद आई",
+    filterAll: "सभी", sortBy: "क्रमबद्ध करें", sortNewest: "नवीनतम", sortPriceLow: "कीमत: कम से ज़्यादा", sortPriceHigh: "कीमत: ज़्यादा से कम", sortMostLoved: "सबसे ज़्यादा पसंद",
+    noItemsFound: "कोई पीस नहीं मिली", searchItems: "पीस खोजें...",
   },
 };

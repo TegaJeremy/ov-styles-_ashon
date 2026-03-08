@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown, Globe, ShoppingBag } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import { BRAND_NAME, LANGUAGES } from "@/lib/constants";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const { totalItems, openDrawer } = useCart();
   const langRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
@@ -116,6 +118,20 @@ const Navbar = () => {
             )}
           </div>
 
+          {/* Cart icon */}
+          <button
+            onClick={openDrawer}
+            className="relative w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-accent hover:text-accent text-muted-foreground transition-all duration-300 hover:bg-accent/10"
+            aria-label="View cart"
+          >
+            <ShoppingBag size={15} />
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-accent text-accent-foreground text-[9px] flex items-center justify-center font-bold leading-none">
+                {totalItems > 9 ? "9+" : totalItems}
+              </span>
+            )}
+          </button>
+
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
@@ -141,6 +157,15 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile Cart */}
+            <button
+              onClick={() => { setOpen(false); openDrawer(); }}
+              className="flex items-center gap-2 text-sm font-body tracking-[0.25em] uppercase text-muted-foreground hover:text-accent transition-colors duration-300"
+            >
+              <ShoppingBag size={15} />
+              {t.cart}{totalItems > 0 && ` (${totalItems})`}
+            </button>
 
             {/* Mobile Language Switcher */}
             <div className="pt-4 border-t border-border/40 w-48">
