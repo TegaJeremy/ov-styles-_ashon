@@ -4,13 +4,69 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Code2, Scissors, Sparkles } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import ceoImage from "@/assets/ceo.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import ceoImage from "@/assets/ceo.jpeg";
+
+// Cloudinary for the Our Story section image
+const STORY_IMAGE = "https://res.cloudinary.com/dsml73vio/image/upload/w_800,q_70,f_auto/v1772984832/IMG_4130_fbomnw.jpg";
+const STORY_THUMB = "https://res.cloudinary.com/dsml73vio/image/upload/w_40,q_30,f_auto/v1772984832/IMG_4130_fbomnw.jpg";
+
+// Local asset for CEO section
+const CEO_IMAGE = ceoImage;
+const CEO_THUMB = ceoImage;
+
+// Blur-up image component — shows tiny blurred placeholder instantly, then loads full image
+const LazyImage = ({
+  src, thumb, alt, className, objectPosition = "center",
+}: {
+  src: string; thumb: string; alt: string; className?: string; objectPosition?: string;
+}) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+    if (img.complete) {
+      if (wrapRef.current) wrapRef.current.style.filter = "none";
+      return;
+    }
+    img.onload = () => {
+      if (wrapRef.current) {
+        wrapRef.current.style.transition = "filter 0.6s ease";
+        wrapRef.current.style.filter = "none";
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={wrapRef}
+      className={`relative overflow-hidden ${className ?? ""}`}
+      style={{
+        backgroundImage: `url(${thumb})`,
+        backgroundSize: "cover",
+        backgroundPosition: objectPosition,
+        filter: "blur(8px)",
+      }}
+    >
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover"
+        style={{ objectPosition }}
+      />
+    </div>
+  );
+};
+
 const AboutPreview = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
   const ceoRef = useRef<HTMLDivElement>(null);
@@ -18,37 +74,55 @@ const AboutPreview = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    gsap.fromTo(sectionRef.current.querySelector(".about-text"),
-      { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out", scrollTrigger: { trigger: sectionRef.current, start: "top 75%" } }
-    );
-    if (imageRef.current) {
-      gsap.fromTo(imageRef.current,
-        { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out", scrollTrigger: { trigger: sectionRef.current, start: "top 75%" } }
+
+    // Use autoAlpha (handles visibility + opacity together, no white flash)
+    const textEl = sectionRef.current.querySelector(".about-text");
+    const imgEl = sectionRef.current.querySelector(".about-image");
+
+    if (textEl) {
+      gsap.fromTo(textEl,
+        { x: -40, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out",
+          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" } }
+      );
+    }
+    if (imgEl) {
+      gsap.fromTo(imgEl,
+        { x: 40, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out",
+          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" } }
       );
     }
     if (valuesRef.current) {
       gsap.fromTo(valuesRef.current.querySelectorAll(".value-item"),
-        { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "power2.out", scrollTrigger: { trigger: valuesRef.current, start: "top 80%" } }
+        { y: 25, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.12, ease: "power2.out",
+          scrollTrigger: { trigger: valuesRef.current, start: "top 85%" } }
       );
     }
     if (processRef.current) {
       gsap.fromTo(processRef.current.querySelectorAll(".step-item"),
-        { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "power2.out", scrollTrigger: { trigger: processRef.current, start: "top 80%" } }
+        { y: 25, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.12, ease: "power2.out",
+          scrollTrigger: { trigger: processRef.current, start: "top 85%" } }
       );
     }
     if (ceoRef.current) {
       gsap.fromTo(ceoRef.current,
-        { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out", scrollTrigger: { trigger: ceoRef.current, start: "top 80%" } }
+        { y: 40, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out",
+          scrollTrigger: { trigger: ceoRef.current, start: "top 80%" } }
       );
     }
   }, []);
 
   return (
     <>
-      {/* About Section */}
+      {/* ── Our Story ── */}
       <section ref={sectionRef} className="py-28 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
             <div className="about-text">
               <span className="text-accent text-xs font-body tracking-[0.4em] uppercase">{t.ourStory}</span>
               <h2 className="font-display text-4xl md:text-6xl font-light mt-3 text-foreground leading-tight">
@@ -73,16 +147,21 @@ const AboutPreview = () => {
                   <div className="text-xs tracking-widest text-muted-foreground uppercase font-body mt-1">{t.clientsLabel}</div>
                 </div>
               </div>
-              <Link to="/about" className="inline-block px-10 py-4 border border-foreground text-foreground text-xs font-body tracking-[0.3em] uppercase hover:bg-foreground hover:text-primary-foreground transition-all duration-300">
+              <Link
+                to="/about"
+                className="inline-block px-10 py-4 border border-foreground text-foreground text-xs font-body tracking-[0.3em] uppercase hover:bg-foreground hover:text-primary-foreground transition-all duration-300"
+              >
                 {t.readMore}
               </Link>
             </div>
 
-            <div className="relative">
-              <img ref={imageRef}
-                src="https://res.cloudinary.com/dsml73vio/image/upload/v1772984832/IMG_4130_fbomnw.jpg"
+            <div className="about-image relative">
+              <LazyImage
+                src={STORY_IMAGE}
+                thumb={STORY_THUMB}
                 alt="O.V Styles Atelier"
-                className="w-full aspect-[3/4] object-cover" loading="lazy"
+                className="w-full aspect-[3/4]"
+                objectPosition="top"
               />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-accent hidden lg:block" />
               <div className="absolute -top-6 -right-6 w-20 h-20 bg-accent/20 hidden lg:block" />
@@ -91,7 +170,7 @@ const AboutPreview = () => {
         </div>
       </section>
 
-      {/* CEO Section */}
+      {/* ── CEO / Visionary ── */}
       <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -103,14 +182,15 @@ const AboutPreview = () => {
           <div ref={ceoRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <div className="relative group">
               <div className="absolute inset-0 border border-accent/20 translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
-              <img
-                src={ceoImage}
-                alt="O.V Styles Creative Director"
-                className="relative w-full aspect-[3/4] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://res.cloudinary.com/dsml73vio/image/upload/v1772984832/IMG_4130_fbomnw.jpg";
-                }}
-              />
+              <div className="relative w-full aspect-[3/4] overflow-hidden">
+                <LazyImage
+                  src={CEO_IMAGE}
+                  thumb={CEO_THUMB}
+                  alt="O.V Styles Creative Director"
+                  className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+                  objectPosition="top"
+                />
+              </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                 <p className="font-display text-white text-xl font-light">{t.ceoTitle}</p>
                 <p className="font-body text-accent text-xs tracking-[0.3em] uppercase mt-1">{t.ceoSubtitle}</p>
@@ -140,7 +220,10 @@ const AboutPreview = () => {
                 ))}
               </div>
 
-              <Link to="/about" className="inline-block px-10 py-4 border border-foreground text-foreground text-xs font-body tracking-[0.3em] uppercase hover:bg-foreground hover:text-primary-foreground transition-all duration-300">
+              <Link
+                to="/about"
+                className="inline-block px-10 py-4 border border-foreground text-foreground text-xs font-body tracking-[0.3em] uppercase hover:bg-foreground hover:text-primary-foreground transition-all duration-300"
+              >
                 {t.fullStory}
               </Link>
             </div>
@@ -148,7 +231,7 @@ const AboutPreview = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* ── Values ── */}
       <section className="py-28 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -175,7 +258,7 @@ const AboutPreview = () => {
         </div>
       </section>
 
-      {/* Process */}
+      {/* ── Process ── */}
       <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -192,7 +275,9 @@ const AboutPreview = () => {
               { step: "04", title: t.step4Title, desc: t.step4Desc },
             ].map((p, i) => (
               <div key={i} className="step-item relative group">
-                {i < 3 && <div className="hidden md:block absolute top-8 left-full w-full h-[1px] bg-border z-0" style={{ width: "calc(100% - 2rem)" }} />}
+                {i < 3 && (
+                  <div className="hidden md:block absolute top-8 left-full h-[1px] bg-border z-0" style={{ width: "calc(100% - 2rem)" }} />
+                )}
                 <div className="font-display text-6xl text-accent/15 font-light mb-4 group-hover:text-accent/30 transition-colors duration-300">{p.step}</div>
                 <h3 className="font-display text-xl font-light text-foreground mb-3">{p.title}</h3>
                 <p className="text-muted-foreground font-body text-sm leading-relaxed">{p.desc}</p>
