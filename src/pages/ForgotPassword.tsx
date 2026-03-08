@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     setLoading(true);
 
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/admin/reset-password`,
+      redirectTo: `https://ov-styles.netlify.app/admin/reset-password`,
     });
 
     setLoading(false);

@@ -23,10 +23,10 @@ const FeaturedSection = () => {
   const { t } = useLanguage();
 
   const categories = [
-    { name: "Gowns", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&q=80", count: "12 Pieces" },
-    { name: "Blazers", image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80", count: "8 Pieces" },
-    { name: "Dresses", image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80", count: "15 Pieces" },
-    { name: "Jumpsuits", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80", count: "6 Pieces" },
+    { name: "Gowns", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772985425/IMG_4132_w8kwg5.jpg", count:"" },
+    { name: "Suits", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772985426/IMG_4131_je3vhz.jpg", count: " " },
+    { name: "Ankara", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772986098/IMG_4140_ftn484.jpg", count: "" },
+    { name: "English wears", image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772986095/IMG_4138_lcnogb.jpg", count: " " },
   ];
 
   useEffect(() => {

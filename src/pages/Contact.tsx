@@ -114,7 +114,7 @@ const Contact = () => {
       {/* Hero */}
       <section className="relative h-[60vh] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+          src="https://res.cloudinary.com/dsml73vio/image/upload/v1772986103/IMG_4135_qdsvau.jpg"
           alt="Contact O.V Styles"
           className="absolute inset-0 w-full h-full object-cover"
         />

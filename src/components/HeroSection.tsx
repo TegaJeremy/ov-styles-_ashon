@@ -16,11 +16,11 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   const heroSlides = [
-    { image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1920&q=80", label: t.newCollection, tagline: t.tagline },
+    { image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772986098/IMG_4140_ftn484.jpg", label: t.newCollection, tagline: t.tagline },
     { image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1920&q=80", label: "Evening Wear", tagline: t.tagline2 },
-    { image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80", label: "Bespoke", tagline: t.tagline3 },
+    { image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772985424/IMG_4133_gqfzfi.jpg", label: "Bespoke", tagline: t.tagline3 },
     { image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&q=80", label: "Ready to Wear", tagline: t.tagline4 },
-    { image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80", label: t.collection, tagline: t.tagline5 },
+    { image: "https://res.cloudinary.com/dsml73vio/image/upload/v1772984833/IMG_4129_avut7t.jpg", label: t.collection, tagline: t.tagline5 },
   ];
 
   useEffect(() => {

@@ -80,7 +80,7 @@ const AboutPreview = () => {
 
             <div className="relative">
               <img ref={imageRef}
-                src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&q=80"
+                src="https://res.cloudinary.com/dsml73vio/image/upload/v1772984832/IMG_4130_fbomnw.jpg"
                 alt="O.V Styles Atelier"
                 className="w-full aspect-[3/4] object-cover" loading="lazy"
               />
@@ -108,7 +108,7 @@ const AboutPreview = () => {
                 alt="O.V Styles Creative Director"
                 className="relative w-full aspect-[3/4] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80";
+                  (e.target as HTMLImageElement).src = "https://res.cloudinary.com/dsml73vio/image/upload/v1772984832/IMG_4130_fbomnw.jpg";
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
